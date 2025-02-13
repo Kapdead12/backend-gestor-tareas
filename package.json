@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "gestor-tareas",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kapa <jgriezmann77@gmail.com>",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
@@ -15,5 +15,6 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.10.0"
-  }
+  },
+  "repository": "https://github.com/Kapdead12/backend-gestor-tareas.git"
 }
