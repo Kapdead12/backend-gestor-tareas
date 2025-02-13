@@ -45,9 +45,16 @@ app.put("/tasks/:id", async (req, res) => {
 });
 
 app.post("/tasks", async (req, res) => {
-  const newTask = new Task({ text: req.body.text, completed: false });
-  await newTask.save();
-  res.json({ message: "Tarea agregada con éxito", task: newTask });
+  try {
+    const newTask = new Task({ text: req.body.text, completed: false });
+    const savedTask = await newTask.save();
+    res.status(201).json({
+      message: "Tarea agregada con éxito",
+      task: savedTask // 🚀 Enviamos el objeto completo
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error al agregar tarea" });
+  }
 });
 
 app.delete("/tasks/:id", async (req, res) => {
